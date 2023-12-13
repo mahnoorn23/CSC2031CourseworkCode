@@ -1,0 +1,17 @@
+01/12 - task 3 extended bit. still getting the error messages after logging into website.
+03/12 - task 4.1, added html for authenticated and anonymous redirection. needs to be tested however
+        and not all bullet pts completed yet.
+04/12 - Task 4 extension. Done all pts except for 3 and 4. Still trying to figure out why it redirects
+        to 2fa after registration of a new admin.
+05/12 - Task 5. the only thing left is the show password button doesn't work and the advanced tasks are left to do.
+        Used the slides from (implement changing passwords)
+        UPDATE = Completed task 5!! start 6
+06/12 - Task 6. Started task 6 but got stuck on logger (slide 24-26) of Logging User Events
+07/12 - Almost done with task 6 however had a few bugs to sort out UPDATE: done!!
+08/12 - Task 7. Haven't done the last part of 7.1 bullet point. Started hashing last night in the early stages however
+        (user/views last)
+09/12 - Finished hashing, however couldn't do 7.1 bullet point 3 (did some in admin\views in the run_lottery
+        function - line 116?) also left the extension for this bit.
+12/12 - Starting task 8. completed first point of 8.1 in lottery forms file. I think im missing the ascending order bit
+        from the extension
+        Started task 9 but the openssl bit doesn't work
