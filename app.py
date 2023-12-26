@@ -28,24 +28,23 @@ logger.addHandler(file_handler)
 
 # CONFIG
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'LongAndRandomSecretKey'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lottery.db'
-app.config['SQLALCHEMY_ECHO'] = True
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# app.config['RECAPTCHA_PUBLIC_KEY'] = os.getenv('RECAPTCHA_PUBLIC_KEY')
-# app.config['RECAPTCHA_PRIVATE_KEY'] = os.getenv('RECAPTCHA_PRIVATE_KEY')
-app.config['RECAPTCHA_PUBLIC_KEY'] = '6Lcqli4oAAAAABDYGdAO_ULvasA2XLWGTHEuDJjx'
-app.config['RECAPTCHA_PRIVATE_KEY'] = '6Lcqli4oAAAAAOKLDTKBslSdHS8Woqx4RGVa2yYH'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
+app.config['SQLALCHEMY_ECHO'] = os.getenv('SQLALCHEMY_ECHO')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = os.getenv('SQLALCHEMY_TRACK_MODIFICATIONS')
+app.config['RECAPTCHA_PUBLIC_KEY'] = os.getenv('RECAPTCHA_PUBLIC_KEY')
+app.config['RECAPTCHA_PRIVATE_KEY'] = os.getenv('RECAPTCHA_PRIVATE_KEY')
 
-# initialise database
+# Task 9 code to generate the security headers however, I believe they wouldn't function unless I did the HTTPS
+# csp = {'default-src': ['\'self\'', 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css'],
+#        'frame-src': ['\'self\'', 'https://www.google.com/recaptcha/', 'https://recaptcha.google.com/recaptcha/'],
+#        'script-src': ['\'self\'', '\'unsafe-inline\'',
+#                       'https://www.google.com/recaptcha/', 'https://www.gstatic.com/recaptcha/']}
+
+# Initialise database
 db = SQLAlchemy(app)
+# talisman = Talisman(app, content_security_policy=csp)
 qrcode = QRcode(app)
-csp = {'default-src': ['\'self\'', 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css'],
-       'frame-src': ['\'self\'', 'https://www.google.com/recaptcha/', 'https://recaptcha.google.com/recaptcha/'],
-       'script-src': ['\'self\'', '\'unsafe-inline\'',
-                      'https://www.google.com/recaptcha/', 'https://www.gstatic.com/recaptcha/']}
-# 'img-src': ['data:']
-talisman = Talisman(app, content_security_policy=csp)
 
 
 # HOME PAGE VIEW

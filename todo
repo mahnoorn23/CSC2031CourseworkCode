@@ -15,3 +15,9 @@
 12/12 - Starting task 8. completed first point of 8.1 in lottery forms file. I think im missing the ascending order bit
         from the extension
         Started task 9 but the openssl bit doesn't work
+13/12 - Last bit of task 9.2 is left (the 2FA stuff) and task 10.
+Just doing some checking and finishing up but it doesnt seem to run (500 error) when i do the lucky dip thing?
+
+Final checklist - Do task 10 (commenting and the .env stuff-i wrote a mini guide in app.py)
+                - Go through all the code again and make sure all things run smoothly
+                - Delete openssl?

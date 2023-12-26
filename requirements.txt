@@ -1,4 +1,5 @@
 werkzeug==2.3.7
+pyotp
 Flask
 flask_sqlalchemy
 flask_login
@@ -8,5 +9,7 @@ email_validator
 flask-qrcode
 MarkupSafe
 cryptography
+SQLAlchemy
 bcrypt
 Flask_Talisman
+python-dotenv
